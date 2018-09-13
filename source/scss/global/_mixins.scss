@@ -1,0 +1,32 @@
+/********** MIXINS **********/
+
+@mixin responsive($media) {
+    @if $media == mobile {
+        @media only screen and (max-width: $break-mobile) { @content; }
+    }
+    @else if $media == tablet {
+        @media only screen and (min-width: $break-mobile) and (max-width: $break-tablet) { @content; }
+    }
+    @else if $media == desktop {
+        @media only screen and (max-width: $break-desktop - 1) { @content; }
+    }
+}// @include responsive(mobile) { float:left; };
+
+
+@mixin transition($on: all, $duration: 300ms, $method: ease, $delay: 0ms) {
+    -webkit-transition: $on $duration $method $delay;
+    -moz-transition: $on $duration $method $delay;
+    -ms-transition: $on $duration $method $delay;
+    -o-transition: $on $duration $method $delay;
+    transition: $on $duration $method $delay;
+}// @include transition(all, 300ms, ease);
+
+
+@mixin clear() {
+    &:after {
+        content: '';
+        display: block;
+        clear: both;
+        *zoom: 1;
+    }
+}// @include clear;

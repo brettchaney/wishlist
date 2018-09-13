@@ -1,0 +1,54 @@
+.banner {
+    height: 260px;
+    display: none;
+
+    .banner-content {
+        width: 380px;
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+        float: right;
+        margin-right: 65px;
+        
+        h2 {
+            font-size: 3.6em !important;
+            line-height: 0.667;
+            font-family: $font-bold;
+            letter-spacing: -0.03em;
+            margin-bottom: 12px;
+        }
+
+        p {
+            color: #fff;
+            font-size: 1.8em;
+            line-height: 1.2;
+            font-family: $font-bold;
+        }
+    }
+
+    @include responsive(tablet) {
+
+        .banner-content {
+            margin-right: 20px;
+            width: 320px;
+        }
+        
+    }
+
+    @include responsive(mobile) {
+       
+        &.hide-desktop {
+            height: auto;
+
+            img {
+                margin: 15px 0 5px;
+            }
+
+            p {
+                color: $color-black;
+                font-size: 1.8em;
+            }
+        }
+
+    }
+}

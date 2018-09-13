@@ -1,0 +1,116 @@
+.selected-prods {
+    padding: 0 0 30px;
+    border-bottom: 1px solid #b2b2b2;
+    margin-bottom: 48px;
+    display: none;
+
+    h2 {
+        color: $color-black;
+        font-size: 2.4em !important;
+        font-family: $font-bold;
+        text-align: center;
+        margin: 24px 0;
+    }
+    
+    ul {
+        overflow: hidden;
+        list-style: none;
+        margin: 10px 0 0;
+
+        li {
+            float: left;
+            padding: 0;
+            margin: 0 1.5% 32px;
+            width: 17%;
+            position: relative;
+
+            &.prod-added {
+                img {
+                    display: none;
+                }
+
+                .number {
+                    display: none;
+                }
+            }
+
+            .number {
+                position: absolute;
+                z-index: 2;
+                color: #fff;
+                left: 0;
+                top: 50%;
+                transform: translateY(-50%);
+                font-size: 4.8em;
+                display: block;
+                text-align: center;
+                width: 100%;
+            }
+        }
+
+        .remove {
+            background: url('../images/wishlist/icon-remove.png?$staticlink$') 0 0 no-repeat;
+            background-size: 30px 30px;
+            position: absolute;
+            height: 30px;
+            width: 30px;
+            right: 0;
+            top: 0;
+            cursor: pointer;
+        }
+    }
+
+    a.btn {
+        font-family: $font-medi;
+        text-transform: none;
+        color: #fff;
+        background-color: $color-orange;
+        border-color: $color-orange;
+
+        &.inactive {
+            cursor: default;
+            color: $color-orange;
+            background-color: transparent;
+            border-color: $color-orange;
+
+            &:hover,
+            &:focus {
+                color: $color-orange;
+                background-color: transparent;
+                border-color: $color-orange;
+                font-family: $font-medi;
+            }
+        }
+    }
+
+    @include responsive(tablet) {
+
+        ul {
+            li {
+                .number {
+                    font-size: 3.6em;
+                   
+                }
+            }
+        }
+        
+    }
+
+    @include responsive(mobile) {
+        margin-bottom: 0;
+
+        h2 {
+            line-height: 1;
+        }
+
+        ul {
+            margin: 35px 0 10px;
+            
+            li {
+                .number {
+                    font-size: 3em;
+                }
+            }
+        }
+    }
+}

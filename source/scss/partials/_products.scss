@@ -1,0 +1,125 @@
+section.products {
+    @include clear;
+    position: relative;
+    min-height: 350px;
+    display: none;
+
+    ul {
+        li {
+            cursor: pointer;
+            float: left;
+            padding: 0 15px;
+            margin: 0 auto 40px;
+            width: 25%;
+            min-height: 320px;
+            text-align: center;
+            list-style: none;
+
+            &:hover {
+                .btn {
+                    background-color: $color-black;
+                    border: 1px solid $color-black;
+                    font-family: $font-bold;
+                    color: #fff;
+                }
+            }
+
+            &.prod-added {
+                cursor: default;
+                opacity: 0.3;
+
+                .btn {
+                    cursor: default;
+                }
+
+                &:hover {
+                    .btn {
+                        background-color: transparent;
+                        color: $color-black;
+                        font-family: $font-medi;             
+                    }
+                }
+            }
+
+            p {
+                padding: 12px 0;
+                font-size: 1.5em;
+                min-height: 64px;
+                margin-bottom: 0;
+                text-align: left;
+            }
+
+            img {
+                max-width: 190px;
+            }
+        }
+    }
+
+    @include responsive(tablet) {
+
+        ul {
+            li {
+                p {
+                    min-height: 92px;
+                }
+            }
+        }
+        
+    }
+
+    @include responsive(mobile) {
+        margin-bottom: 20px;
+       
+        .product {
+            float: none;
+            max-width: 285px;
+            width: 100%;
+
+            p {
+                height: auto;
+            }
+        }
+
+        .jcarousel-wrapper {
+            position: absolute;
+            bottom: 0;
+            margin: 0;
+            left: 0;
+            overflow: hidden;
+            width: 100%;
+
+            .products-carousel {
+                overflow: hidden;
+                width: 100%;
+
+                ul {
+                    width: 30000px !important;
+
+                    li {
+                        margin: 0;
+                        width: 285px;
+                    }
+                }
+            }
+
+            .jcarousel-prev {
+                background: url('../images/wishlist/icon-left-arrow.png?$staticlink$') 0 0 no-repeat;
+                background-size: 23px 36px;
+                left: 0;
+                height: 36px;  
+                width: 23px;
+                top: 35%;
+            }
+
+            .jcarousel-next {
+                background: url('../images/wishlist/icon-right-arrow.png?$staticlink$') 0 0 no-repeat;
+                background-size: 23px 36px;
+                right: 0;
+                height: 36px;  
+                width: 23px;
+                top: 35%;
+            }
+        }
+
+    }
+}

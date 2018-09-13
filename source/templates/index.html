@@ -1,0 +1,150 @@
+@@include('header.html')
+
+<!-- START copy -->
+<link rel="stylesheet" href="css/wishlist.min.css?$staticlink$">
+
+<meta property="og:image" content="http://demandware.edgesuite.net/aasf_prd/on/demandware.static/-/Library-Sites-T2SharedLibrary/default/dwef58af7c/images/wishlist/wishlist-banner-facebook.jpg" />
+
+<!-- add class "usa" for US region i.e. <main class="wishlist usa"> -->
+<main class="wishlist">
+    
+    <h1 class="title-wish-upon">Wish upon a tea</h1>
+    <h1 class="title-my-wishlist">My T2 wishlist</h1>
+
+    <div class="banner hide-desktop">
+        <p>Choose five of your fave tea goodies below, tell us why they’re your ultimate gift and we’ll select one lucky winner to take away the lot each week.</p>
+        <img src="images/wishlist/wishlist-banner-mobile.jpg?$staticlink$">
+    </div>
+    <div class="banner hide-mobile" style="background-image:url('images/wishlist/wishlist-banner.jpg?$staticlink$');">
+        <div class="banner-content">
+            <p>Choose five of your fave tea goodies below, tell us why they’re your ultimate gift and we’ll select one lucky winner to take away the lot each week.</p>
+        </div>
+    </div>
+
+    <section class="selected-prods">
+        <h2>Go ahead and pick your top five tea goodies.</h2>
+        
+        <ul>
+            <li><img src="images/wishlist/blank-prod.gif?$staticlink$"><span class="number">1</span></li>
+            <li><img src="images/wishlist/blank-prod.gif?$staticlink$"><span class="number">2</span></li>
+            <li><img src="images/wishlist/blank-prod.gif?$staticlink$"><span class="number">3</span></li>
+            <li><img src="images/wishlist/blank-prod.gif?$staticlink$"><span class="number">4</span></li>
+            <li><img src="images/wishlist/blank-prod.gif?$staticlink$"><span class="number">5</span></li>
+        </ul>
+
+        <a href="#" class="btn inactive">Submit wishlist</a>
+
+    </section>
+
+    <script type="text/html" id="productTmpl">
+        <ul>
+            <% _.each(items, function(item,key,list){ %>
+            <li data-pid="<%= item.pid %>">
+                <img src="<%= item.image %>">
+                <p><%= item.name %></p>
+                <span class="btn">Add to wishlist</span>
+            </li>
+            <% }); %>
+        </ul>
+    </script>
+
+    <section class="products"></section>
+
+    <section class="submission">
+
+        <div class="form-wrap">
+            <p>In 25 words or less, tell us why T2 is the ultimate Christmas gift!</p>
+
+            <form class="wishlistform" method="get">
+                <div class="error"></div>
+                <span class="go-back">Go back to wishlist</span>
+                <p class="required">Fields marked * are mandatory</p>
+                <div class="form-group">
+                    <label for="firstname">First name*</label>
+                    <input type="text" class="form-control" name="firstname" id="firstname" title="Please enter your first name">
+                </div>
+                <div class="form-group">
+                    <label for="lastname">Last name*</label>
+                    <input type="text" class="form-control" name="lastname" id="lastname" title="Please enter your last name">
+                </div>
+                <div class="form-group">
+                    <label for="emailaddress">Email*</label>
+                    <input type="text" class="form-control" name="emailaddress" id="emailaddress" title="Please enter a valid email address">
+                </div>
+                <div class="form-group textarea-group">
+                    <label for="comp_entry">Why is T2 the ultimate Christmas gift? - 25 words or less.*</label>
+                    <textarea class="form-control" name="comp_entry" id="comp_entry" rows="3" maxlength="200" title="Please enter why T2 is the ultimate Christmas gift?- 25 words or less"></textarea>
+                </div>
+                <div class="form-check first-check">
+                    <label class="form-check-label">
+                        <input class="form-check-input" name="optin_status" id="optin_status" type="checkbox"> Receive emails from T2 Tea Society
+                    </label>
+                </div>
+                <div class="form-check">
+                    <label class="form-check-label">
+                        <input class="form-check-input" name="agreetoterms" type="checkbox" id="agreetoterms" value="yes" title="Agree to the Terms & Conditions and Privacy Policy"> I agree to the <a href="pdf/Wish_Upon_A_Tea_Competition_TCS_V1.pdf?$staticlink$" target="_blank">Terms &amp; Conditions</a> &amp; <a href="pdf/Wish_Upon_A_Tea_Competition_TCS_V1.pdf?$staticlink$" target="_blank">Privacy Policy</a>*
+                    </label>
+                </div>
+                <button type="submit" class="btn submit">Enter competition</button>
+            </form>
+        </div>
+
+    </section>
+
+    <section class="list-submitted">
+
+        <p>Thanks for entering, now it’s time <br>to share your wishlist with the world!</p>
+
+        <div class="social-share">
+            <div class="share-facebook toolbox1 addthis_toolbox"><a href="#" class="addthis_button_facebook">facebook</a></div>
+            <div class="share-twitter"><a href="#" class="addthis_button_twitter">twitter</a></div>
+        </div>
+
+        <a href="#" class="btn btn-email-share">Email this wishlist</a>
+
+        <p class="small-text">Fingers crossed you’re our winner. If so, we’ll be in touch in the next seven days. Happy sipping!</p>
+    
+    </section>
+
+    <section class="my-wishlist">        
+        
+        <div class="my-products">
+            <ul></ul>
+        </div>
+
+        <p>Create your own wishlist here!</p>
+        <a href="#" class="btn btn-enter">Enter competition</a>
+        <a href="#" class="btn btn-email">Email this wishlist</a>
+
+    </section>
+
+    <script type="text/html" id="myWishlistTmpl">
+        <ul>
+            <% _.each(items, function(item,key,list){ %>
+            <li data-pid="<%= item.pid %>">
+                <a href="<%= item.url %>">
+                    <img src="<%= item.image %>">
+                </a>
+            </li>
+            <% }); %>
+        </ul>
+    </script>
+
+</main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.15.0/jquery.validate.min.js"></script>
+<script src="js/wishlist.min.js?$staticlink$"></script>
+<!-- END copy -->
+
+<!-- For local use only START -->
+<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=ra-5028c57a512d7fbf"></script>
+
+<script src="http://demandware.edgesuite.net/aasf_prd/on/demandware.static/Sites-UNI-T2-APAC-Site/-/en_AU/v1477331058629/lib/jquery/ui/jquery-ui-1.9.2.min.js" type="text/javascript" defer="defer"></script>
+
+<script src="http://demandware.edgesuite.net/aasf_prd/on/demandware.static/Sites-UNI-T2-APAC-Site/-/en_AU/v1461150067355/lib/jquery/jcarousel/jquery.jcarousel.min.js" type="text/javascript" defer="defer"></script>
+
+<script src="http://demandware.edgesuite.net/aasf_prd/on/demandware.static/Sites-UNI-T2-APAC-Site/-/en_AU/v1461150067355/lib/jquery/touchwipe/jquery.touchwipe.js"></script>
+<!-- For local use only END -->
+
+@@include('footer.html')

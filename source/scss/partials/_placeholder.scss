@@ -1,0 +1,28 @@
+.placeholder {
+    padding: 55px 0 30px;
+    margin-bottom: 48px;
+
+    p {
+        font-size: 2.4em;
+        line-height: 1;
+        font-family: $font-bold;
+        text-align: center;
+    }
+
+    a.btn {
+        font-family: $font-medi;
+        text-transform: none;
+        color: #fff;
+        background-color: $color-orange;
+        border-color: $color-orange;
+        margin-top: 24px;
+    }
+
+    @include responsive(tablet) {
+        
+    }
+
+    @include responsive(mobile) {
+        padding: 25px 0 30px;
+    }
+}

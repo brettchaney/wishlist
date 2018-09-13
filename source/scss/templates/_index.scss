@@ -1,0 +1,108 @@
+body {
+    background-color: #fff; /* remove when live */
+}
+
+.body_assetwishlist {
+    #secondary {
+        display: none;
+    }
+
+    @include responsive(mobile) {
+        #primary {
+            margin: 0;
+        }
+    }
+}
+
+.wishlist {
+    position: relative;
+    font-size: 0.7142857em; /* = 10px */
+    min-height: 700px;
+    background: url('../images/wishlist/preloader.gif?$staticlink$') no-repeat -9999px -9999px;
+
+    &.loading {
+        background: url('../images/wishlist/preloader.gif?$staticlink$') center 400px no-repeat;
+    }
+
+    * {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
+    img {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    a,
+    button {
+        @include transition(all, 200ms, ease);
+    }
+
+    .btn {
+        border: 1px solid $color-black;
+        background-color: transparent;
+        color: $color-black;
+        cursor: pointer;
+        display: block;
+        line-height: 38px;
+        height: 40px;
+        margin: 0 auto;
+        padding: 0;
+        font-size: 1.5em;
+        text-align: center;
+        max-width: 255px;
+        text-transform: none;
+
+        &:hover,
+        &:focus {
+            background-color: $color-black;
+            border: 1px solid $color-black;
+            color: #fff;
+        }
+    }
+
+    p {
+        color: $color-black;
+    }
+
+    h1 {
+        color: $color-black;
+        letter-spacing: -0.03em;
+        font-family: $font-bold;
+        font-weight: normal;
+        margin-bottom: 15px;
+        display: none;
+    }
+
+    &.my-wishlist-wrap {
+        min-height: 550px;
+
+        &.loading {
+            background: url('../images/wishlist/preloader.gif?$staticlink$') center 270px no-repeat;
+        }
+
+        .banner {
+            display: none;
+        }
+    }
+
+    @include responsive(mobile) {
+        min-height: 400px;
+
+        &.loading {
+            background-position: center 348px;
+        }
+
+        &.my-wishlist-wrap {
+            min-height: 300px;
+        }
+        
+        h1 {
+            font-size: 3em !important;
+            margin-bottom: 10px;
+        }
+
+    }
+}

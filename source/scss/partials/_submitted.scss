@@ -1,0 +1,102 @@
+section.list-submitted {
+    display: none;
+    padding: 50px 0 70px;
+    position: relative;
+
+    p {
+        font-size: 2.4em;
+        line-height: 1;
+        font-family: $font-bold;
+        letter-spacing: -0.03em;
+        text-align: center;
+
+        &.small-text {
+            font-family: $font-medi;
+            font-size: 1.2em;
+            letter-spacing: 0;
+        }
+    }
+
+    .social-share {
+        text-align: center;
+        margin: 28px 0 76px;
+
+        .share-facebook {
+            margin-right: 60px;
+            display: inline-block;
+            position: relative;
+            left: -50px;
+
+            a {
+                width: 20px;
+                height: 43px;
+                background: url('../images/wishlist/icon-facebook.png?$staticlink$') 0 0 no-repeat;
+                background-size: 20px 43px;
+                display: block;
+                text-indent: -999px;
+                overflow: hidden;
+            }
+        }
+
+        .share-twitter {
+            display: inline-block;
+            position: relative;
+            left: -50px;
+
+            a {
+                width: 48px;
+                height: 38px;
+                background: url('../images/wishlist/icon-twitter.png?$staticlink$') 0 0 no-repeat;
+                background-size: 48px 38px;
+                display: block;
+                text-indent: -999px;
+                overflow: hidden;
+                position: relative;
+                top: -6px;
+            }
+        }
+    }
+
+    .btn-email-share {
+        width: 51px;
+        height: 34px;
+        background: url('../images/wishlist/icon-email.png?$staticlink$') 0 0 no-repeat;
+        background-size: 51px 34px;
+        display: block;
+        text-indent: -999px;
+        overflow: hidden;
+        position: absolute;
+        top: 140px;
+        left: 50%;
+        margin-left: 64px;
+        border: none;
+
+        &:hover,
+        &:focus {
+            background-color: transparent;
+            border: none;
+        }
+    }
+
+
+    @include responsive(tablet) {
+       
+    }
+
+    @include responsive(mobile) {
+        padding: 20px 0 30px;
+
+        br {
+            display: none;
+        }
+
+        p {
+            height: 85px;
+        }
+
+        .social-share {
+            margin-bottom: 50px;
+        }
+
+    }
+}
